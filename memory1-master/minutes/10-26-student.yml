@@ -1,0 +1,34 @@
+date: October 26, 2016
+meeting_type: student
+attendance: [undefined]
+absent: [yonghyun, rktaylor, alee22, kangmink, bpriexin, jacondel]
+excused_absences: [
+  {ubit: all absent, excuse: We felt no necessity for everyone meeting together for most of the sprint. There were several small meetings.}
+  ]
+task_progress: [
+  {ubit: jacondel, progress: Saving the day.},
+  {ubit: bpriexin, progress: Saving the server.}
+  ]
+issues: [
+  {ubit: bpriexin, issue: People keep pushing broken code to the main website, we all need our own testing environments.}
+  ]
+Notes:  | 
+Aside from asking Jake about his php/js files for DB access, our tasks were mostly independent from one another's.
+We therefore did not meet each other often outside of TA meetings, where Mike checked up on our progress.
+
+There were very likely several small meetings between two or three of us which I am forgetting. For instance, Ben and Jacob
+  definitely spent time outside of TA meetings tweaking php files related to the server and DB, and also considering
+  technical issues, such as how to maintain user data after their cookies expire.
+  
+There were also some extra talks with Mike before and after meetings, involving a variety of topics, such as the legality
+  of collecting research data with open-source code, dealing with GitHub's weirdness, and how to have everyone set up
+  their own directory within the server (also covered in a TA meeting).
+
+10/28 UPDATE: A real meeting took place on 10/28, where many bugs were fixed and last-minute tasks were assigned. Check out that file.
+We did have a lot of last-second problems, like Kang breaking Jacob's dbAccess.php file, and also we assigned Julius the task of
+  linking our files on the main website, but we also banned everyone from tinkering with the main website until the end of the
+  sprint, so while Julius did accomplish his task on his directory of the server, we otherwise made it impossible for him. Finally,
+  Andrew was having trouble getting his DB Accesses to work for his Training page. All of these problems are now resolved, fortunately.
+  
+Jacob ultimately had to do a little bit of everyone's job in order to keep things together for this sprint, in addition to his own
+  tasks. He deserves a freaking medal or something.

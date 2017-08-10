@@ -1,0 +1,33 @@
+date: October 4, 2016
+meeting_type: ta
+attendance: [rktaylor, jacondel, bpriexin, kangmink, alee22]
+absent: [yonghyun]
+excused_absences: [
+  {ubit: yonghyun, excuse: Had class, this was known when the meeting was scheduled. He has attended TA meetings.}
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Added a minutes count to the timer. Added a lot of functionality to the actual memory test itself; it's almost completely ready},
+  {ubit: alee22, progress: Applying fixes to rktaylor's code.},
+  {ubit: jacondel, progress: Fixed the database. It is ready to have information sent and pulled from it.},
+  {ubit: yonghyun, progress: Replaced our login page. Has a professional look, and works with what bpriexin wrote for Google API logins.},
+  {ubit: bpriexin, progress: Tried to resolve a problem with permissions/security, configured the server a lot, configured Google API, oh my!},
+  {ubit: kangmink, progress: Made a scoreboard, usable for the results page. }
+  ]
+issues: [
+  {}
+  ]
+Notes:  | 
+TASK PROGRESS UNCHANGED FROM PREVIOUS TA MEETING!
+We can change our server to Mike's or the Class server if Amazon terrifies Ben.
+
+Eventually, everything is going to "live" on the Amazon server.
+So, the front-end uses html/CSS/javascript.
+The back-end uses php.
+
+If the client-side coders feel like a security compromise is stopping them from implementing a feature, then
+a php script should be written to fix the issue. "Sanitize inputs".
+
+We need to think more about how to give user-incentive to play this thing.
+Right now, all we have is the leaderboard.
+
+We may have to have a user-agreement that deals with the fact that our project is kind of an experiment.

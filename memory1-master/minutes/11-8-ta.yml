@@ -1,0 +1,36 @@
+date: November 8, 2016
+meeting_type: ta
+attendance: [rktaylor, jacondel, bpriexin, yonghyun, alee22, kangmink]
+absent: []
+excused_absences: [
+  {}
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Bug fixed test page, and changed user input from multiple choice to input box.},
+  {ubit: alee22, progress: Designed the badges and badge requirements for the badge system.},
+  {ubit: jacondel, progress: Account page now allows you to enter a username, so e-mail isn't always displayed on scoreboard. Other technical fixes.},
+  {ubit: yonghyun, progress: Added progress bar to train1.html (an old version by mistake), and improved the user feedback on train1.},
+  {ubit: bpriexin, progress: Messed with a lot of technical things, as usual. Has functions ready for Andrew to use for the badge system.},
+  {ubit: kangmink, progress: Altered the scoreboard to find either Google first name + last name, or emails.}
+  ]
+issues: [
+  {ubit: everyone, issue: What if someone hits the back button on their browser durng the test?}
+  {ubit: everyone, issue: Besides implementing a timer, how do we stop people from cheating during the test (writing down their map on paper)?}
+  {ubit: anyone, issue: A user-agreement document may need to be written because our purpose is research.
+  {ubit: everyone, issue: We still don't have much in the way of incentive for users. Would any of us want to participate in our research?}
+  ]
+Notes:  | 
+We are going to do beta testing on 11/16 at 2pm. We will need a debug/suggestion form for users to fill out, and whatever else.
+
+We need the test page to return more information to the DB. At a minimum, time remaining. At best, which Q's were answered right+wrong.
+Test page and Train2 page need CSS.
+Train2 needs more feedback for wrong answers, or else it gets boring.
+Train2 needs its table displayng properly.
+The technical issues above.
+Train1 could get some CSS that adjusts font colors as stuff is typed, and text box should always be "on focus" (don't have to keep clicking it).
+Scoreboard should not display e-mails, it should display a name instead.
+Security Problems include logout verification, cookie redirecting (login verification), and converting scoreboard to .html instead of .php.
+Instructions could be added to each page.
+The badge graphics must be credited as being from... wherever they came from.
+
+NOTE FOR GRADING, I (rktaylor) tend to understate everyone else's tasks, because there's too much going on at once during our meetings.

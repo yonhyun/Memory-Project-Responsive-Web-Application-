@@ -1,0 +1,25 @@
+date: September 27, 2016
+meeting_type: ta
+attendance: [rktaylor, jacondel, alee22, yonghyun, bpriexin, kangmink]
+absent: [None]
+excused_absences: [
+  {None},
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Created my first html file. It is the top of the Test Page GUI.},
+  {ubit: alee22, progress: Tried to design the test itself.},
+  {ubit: jacondel, progress: Pushed a bunch of files on GitHub, got the database on the server, has readied interaction between the two.},
+  {ubit: yonghyun, progress: Designed a login page, which can be combined with Ben's work for a professional look.},
+  {ubit: bpriexin, progress: Has our AWS server ready for testing code, and has logins setup with Google API. Changed our home page.},
+  {ubit: kangmink, progress: Created and tested queries on the database.}
+  ]
+issues: [
+  {ubit: jacondel, issue: The "Get" command isn't working on his database code.}
+  {ubit: alee22, issue: Still has a lot of formatting/CSS styling to do.}
+  {ubit: rktaylor, issue: Merging our code might get confusing. Especially since GitHub makes such a mess with the lowest branches.}
+  ]
+Notes:  | 
+If the users input anything in a text box, it must be encrypted and checked before reaching the server, to prevent SQL hacks.
+Mike put a branch on GitHub called "Mike's Resources", for now he has a file that can deal with SQL injections.
+Mike will purchase the domain name memoryone.xyz
+We're gonna meet in groups of two for our student meetings.

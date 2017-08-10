@@ -1,0 +1,396 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+   <head>
+      <title>Memory 1</title>
+      <link rel="stylesheet" 
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <style>
+        .navbar {
+          margin-bottom: 0;
+        }
+
+        .navbar-inverse {
+          background-color: #222222;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+          background-color: #045FB4;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+          background-color: #222222;
+        }
+
+        .dropdown-menu {
+          background-color: #222222;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          background-color: #045FB4;
+        }
+
+        .navbar-inverse {
+          background-image: none;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          background-image: none;
+        }
+
+        .navbar-inverse {
+          border-color: #080808;
+        }
+
+        .navbar-inverse .navbar-brand {
+          color: #999999;
+        }
+
+        .navbar-inverse .navbar-brand:hover {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>li>a {
+          color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu>li>a {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a .caret {
+          border-top-color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+          border-top-color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a .caret {
+          border-bottom-color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+          border-bottom-color: #FFFFFF;
+        }
+
+        .jumbotron {
+          background-color: #045FB4;
+          color: #fff;
+          padding: 50px 25px;
+          font-family: Montserrat, sans-serif;
+        }
+
+        .col-centered {
+          display: inline-block;
+          float: none;
+                 /* reset the text-align */
+          text-align: left;
+                 /* inline-block space fix */
+          margin-right: -4px;
+        }
+
+        .col-centered {
+          float: none;
+          margin: 0 auto;
+        }
+
+        #workspace {
+          text-align: center;
+          font-size: 30px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+
+        #workspace2 {
+          text-align: center;
+          font-size: 30px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+
+        #workspace3 {
+          text-align: center;
+          font-size: 40px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+      </style>
+   </head>
+   <body>
+      <script>
+         var uName = window.sessionStorage.getItem("personName");
+         if(uName == "null" || uName === null){
+             window.location = "index.html";    
+         }
+      </script>
+      <nav class="navbar navbar-inverse navbar-static-top">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+               <ul class="nav navbar-nav">
+                  <li><a href="main.html">Home</a></li>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Train <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="train1.html">Training Method 1</a></li>
+                        <li><a href="train2.html">Training Method 2</a></li>
+                        <li><a href="train3.html">Training Method 3</a></li>
+                        <li><a href="mnemonic.html">Setup Mnemonic</a></li>
+                        <li><a href="trainHistory.html">Train History</a></li>
+                     </ul>
+                  </li>
+                  <li class="active"><a href="test.html">Test</a></li>
+                  <li><a href="scoreboard.php">Scoreboard</a></li>
+                  <li><a href="account.html">Account</a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#" onclick="signOut();">Sign out</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <meta name="google-signin-client_id" content="833283724043-60mn1u2ekeacj2fmpupmtvpq6rd37eab.apps.googleusercontent.com">
+      <script>
+         function signOut() {
+           var auth2 = gapi.auth2.getAuthInstance();
+           auth2.signOut().then(function () {
+           console.log('User signed out.');
+           window.sessionStorage.setItem("personName", null);
+         window.sessionStorage.setItem("personEMail", null);
+               window.location = "index.html";
+           });
+         }
+           function onLoad() {
+             gapi.load('auth2', function() {
+               gapi.auth2.init();
+             });
+           }
+      </script>
+      <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+      <div class="jumbotron text-center">
+         <h1>Test</h1>
+         <h3>Type the digit corresponding to each of the 26 letters.</h3>
+	       <h3>You have only 75 seconds!</h3>
+         <h3>You can press the spacebar or the enter key to submit each answer.</h3>
+      </div>
+      <div id="workspace">
+         <div id="qcount">
+         Question #: <span id="QNo"> </span>/26
+         </div>
+         <div id="ccount">
+         Correct: <span id="CNo"> </span>
+         </div>
+      </div>
+      <hr>
+      <div id="workspace2">
+         <div id="timeleft">
+            <div id="clockdiv">
+               Time remaining: <span id="MinsLeft"> </span>:<span id="clockspan"> </span>
+            </div>
+         </div>
+      </div>
+      <hr>
+      <div id="workspace3">
+         <div id="nextLetter" type="button" >
+         LETTER: <span id="currentQ"> </span>
+         </div>
+         <div>
+            <div style="margin: 0 auto">
+              Answer: <input type="text" name="answer" id="response" maxlength="1" style="width:200px;text-align:center">
+        	    <img src="https://openclipart.org/download/202732/checkmark.svg" style="width:20px;height:20px;display:none;" id="correct">
+        	    <font color="green" id="correcttext" style="display:none">Correct!</font>
+        	    <img src="http://www.drodd.com/images15/red-x4.png" style="width:20px;height:20px;display:none;" id="wrong">
+        	    <font color="red" id="wrongtext" style="display:none">Wrong!</font>
+            </div>
+            <button id="answer" type="button", onclick="checkAns()">
+            Submit
+            </button>
+         </div>
+      </div>
+      <script src="dbAccess.js"> </script>
+      <!--Allow access to keyboard input checks-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+      <script>
+         $(document).keypress(function(e) 
+         {
+	         var keycode = (e.keyCode ? e.keyCode : e.which);
+	         if(keycode == '32'||keycode == '13')
+	         {
+		         checkAns();//Allows SPACE or ENTER key to be pressed to activate the Submit button.
+	         }
+         });
+         
+         var qno = 1
+         var cno = 0
+         var correctAns = 0//Randomized answers on the mult. choice version.
+         var mins = 1
+         document.getElementById("QNo").innerHTML = qno
+         document.getElementById("CNo").innerHTML = cno
+         document.getElementById("MinsLeft").innerHTML = mins
+         document.getElementById("clockspan").innerHTML = 15
+         var uEMail = window.sessionStorage.getItem("personEMail")//Email needed as funct param.
+         var uSessionToken = window.sessionStorage.getItem("sessionToken");
+         cb = function() {}
+         var letters
+         var usedLetters
+         letters = new Array()
+         usedLetters = new Array()//Helps prevent duplicate letters during test.
+         var usedi = 0
+         var currentLetter
+         var currentLetterAnswer
+         var updateTimerId
+         var endTime
+         var globalMap
+
+         for (i = 0; i < 26; i++){
+           letters[i] = String.fromCharCode('A'.charCodeAt() + i);
+           } 
+
+         document.getElementById("response").focus()
+	      
+         //Pulls the map from DB. Used as global variable "globalMap".
+         cb2 = function(){
+           //extract map from JSON response
+           row =  JSON.parse(this.responseText);
+           map = row[0].Map.split(',')
+           globalMap = map
+           beginTest()//Test now begins immediately.
+         }
+         getMapFromDBSuccess(uEMail,uSessionToken,cb2)  
+           
+         function beginTest(){
+           initTimer()
+           nextLetter()
+           updateTimerId = setInterval(updateTimer,1000)
+         }
+         
+         function plusQ(){
+            qno += 1
+            if (qno <= 26){
+	            document.getElementById("QNo").innerHTML = qno
+            }
+            else{
+	            document.getElementById("QNo").innerHTML = 26
+		    //Prevents overflow of QNo display while QNo is still updated in background.
+            }
+         }
+         function plusC(){
+           cno += 1//one point per correct answer.
+           document.getElementById("CNo").innerHTML = cno
+         }
+         function initTimer(){
+           endTime =  new Date().getTime() + (15*1000) //Left number = number of seconds
+           document.getElementById("clockspan").innerHTML = 15
+         }
+         function resetTimer(){
+          endTime = new Date().getTime() + (59*1000)
+         }
+         function updateTimer(){
+           timeLeft = Math.round((endTime - new Date().getTime())/1000) //Timer countdown speed
+           if(timeLeft < 0){              				//Lower number = faster count
+          if(mins == 0){						//1000 = 1 second
+           qno = 27
+           document.getElementById("answer").disabled=true;
+           document.getElementById("response").disabled=true;
+           document.getElementById("qcount").innerHTML = "Score: " + 100*cno;
+           document.getElementById("qcount").style["color"] = "green";
+           alert("Time's up!")
+
+           addScoreToDBSuccess(uEMail, cno,0,uSessionToken , cb)
+           clearInterval(updateTimerId)}
+          else{
+           mins = mins - 1
+           document.getElementById("MinsLeft").innerHTML = mins
+           timeLeft = 59
+           document.getElementById("clockspan").innerHTML = timeLeft}
+           resetTimer()//This resets it to 59 to account for a minute having passed.
+          }
+         else{
+             if(timeLeft >= 10){
+               document.getElementById("clockspan").innerHTML = timeLeft
+             }
+           else{
+             document.getElementById("clockspan").innerHTML = "0" + timeLeft
+             }
+           }
+         }
+         function nextLetter(){
+           var random26
+           var random10
+           random26 = Math.floor(Math.random()*26)
+           while (usedLetters.indexOf(random26) != -1){//NOTE: This line prevents compatibility with IE 8 and earlier!
+            random26 = Math.floor(Math.random()*26)
+           }
+           usedLetters[usedi] = random26//Prevent the same letter from being pulled multiple times.
+           usedi += 1
+           currentLetter = letters[random26]
+           currentLetterAnswer = globalMap[random26]
+           document.getElementById("currentQ").innerHTML = currentLetter
+         }
+         function checkAns(){
+           //This is called either when the Submit button is clicked, or when Spacebar/Enter is pushed.
+           var useranswer = document.getElementById("response").value
+           document.getElementById("response").value = ""
+           document.getElementById("response").focus()    
+           plusQ()//Note that this is called before the number is checked below.
+           if ((useranswer == currentLetterAnswer || useranswer == " " + currentLetterAnswer) && qno <= 27)
+           {
+	          plusC();
+	        document.getElementById('correct').style.display = 'inline-block';
+          document.getElementById('correcttext').style.display = 'inline-block'; 
+		      document.getElementById('wrong').style.display = 'none';
+		      document.getElementById('wrongtext').style.display = 'none';
+           }
+           else if ((useranswer != currentLetterAnswer && useranswer != " " + currentLetterAnswer) && qno <= 27)
+           {
+          document.getElementById('wrong').style.display = 'inline-block';
+          document.getElementById('wrongtext').style.display = 'inline-block';
+		      document.getElementById('correct').style.display = 'none';
+		      document.getElementById('correcttext').style.display = 'none';
+           }
+           if(qno == 27){
+             clearInterval(updateTimerId)
+             var timeLeft = Math.round((endTime - new Date().getTime())/1000)
+             var timeRemaining = 60*mins + timeLeft
+             console.log(timeRemaining);
+             document.getElementById("answer").disabled=true;
+             document.getElementById("response").disabled=true;
+             document.getElementById("qcount").innerHTML = "Score: " + (100*cno + cno*timeRemaining);
+             document.getElementById("qcount").style["color"] = "green";
+             alert("You're done!")
+             addScoreToDBSuccess(uEMail, cno, timeRemaining, uSessionToken ,cb)
+			 addLeaderBoardBadgeToDBSuccess(uEMail,uSessionToken,cb)
+			 addAllRightOrWrongBadgeToDBSuccess(uEMail,cno,uSessionToken,cb)
+          }
+           else if(qno < 27){
+           nextLetter()
+           }
+         }
+      </script>
+   </body>
+</html>

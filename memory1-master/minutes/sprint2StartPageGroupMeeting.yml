@@ -1,0 +1,12 @@
+date: October 5, 2016
+meeting_type: Individual meeting/Issues meeting
+absent: [None]
+excused_absences: [
+   {None},
+   ]
+task_progress: [
+   {ubit: yonghyun, progress: Designed start page and logged in page with bootstrap.},
+   {ubit: bpriexin, progress: Configured Google API to authenticate users and put name and email address in a cookie which is then sent to the DB.}
+   ]
+Notes:  |
+Yonghyun and Bpriexin didn't meet in person as we were able to diservify our tasks and complete them without meeting in person.  The merging of our content went smoothly.

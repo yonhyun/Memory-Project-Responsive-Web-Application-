@@ -1,0 +1,349 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+   <head>
+      <title>Memory 1</title>
+      <link rel="stylesheet" 
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <style>
+        #workspace {
+          text-align: center;
+          font-size: 40px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+
+        #workspace2 {
+          text-align: center;
+        }
+
+        #workspace3 {
+          text-align: center;
+          font-size: 20px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+
+        #textBox {
+          text-align: center;
+          font-size: 40px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+
+        .divTable {
+          display: table;
+          width: 100%;
+          table-layout: fixed;
+          color: white;
+          height: 100px;
+          text-align: center;
+          border: none;
+          background: none;
+        }
+
+        .divTableRow {
+          display: table-row;
+        }
+
+        .divTableCell {
+          display: table-cell;
+          height: 100px;
+          font-size: 40px;
+          vertical-align: middle;
+        }
+
+        .divTableBody {
+          display: table-row-group;
+        }
+
+        @media screen and (max-width: 768px) {
+          .divTableCell {
+            height: 25px;
+            font-size: 10px;
+          }
+
+          .divTable {
+            height: 25px;
+          }
+
+          #textBox {
+            font-size: 10px;
+          }
+
+          #workspace {
+            font-size: 10px;
+          }
+        }
+
+        .navbar {
+          margin-bottom: 0;
+        }
+
+        .navbar-inverse {
+          background-color: #222222;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+          background-color: #045FB4;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+          background-color: #222222;
+        }
+
+        .dropdown-menu {
+          background-color: #222222;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          background-color: #045FB4;
+        }
+
+        .navbar-inverse {
+          background-image: none;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          background-image: none;
+        }
+
+        .navbar-inverse {
+          border-color: #080808;
+        }
+
+        .navbar-inverse .navbar-brand {
+          color: #999999;
+        }
+
+        .navbar-inverse .navbar-brand:hover {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>li>a {
+          color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu>li>a {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a .caret {
+          border-top-color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+          border-top-color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a .caret {
+          border-bottom-color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+          border-bottom-color: #FFFFFF;
+        }
+
+        .jumbotron {
+          background-color: #045FB4;
+          color: #fff;
+          padding: 50px 25px;
+          font-family: Montserrat, sans-serif;
+        }
+
+        .col-centered {
+          display: inline-block;
+          float: none;
+                 /* reset the text-align */
+          text-align: left;
+                 /* inline-block space fix */
+          margin-right: -4px;
+        }
+
+        .col-centered {
+          float: none;
+          margin: 0 auto;
+        }
+      </style>
+   </head>
+   <body>
+      <script>
+         var uName = window.sessionStorage.getItem("personName");
+         console.log(uName);
+         if(uName == "null" || uName === null){
+             window.location = "index.html";    
+         }
+      </script>
+      <nav class="navbar navbar-inverse navbar-static-top">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+               <ul class="nav navbar-nav">
+                  <li><a href="main.html">Home</a></li>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Train <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="train1.html">Training Method 1</a></li>
+                        <li><a href="train2.html">Training Method 2</a></li>
+                        <li class="active"><a href="train3.html">Training Method 3</a></li>
+                        <li><a href="mnemonic.html">Setup Mnemonic</a></li>
+                        <li><a href="trainHistory.html">Train History</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="test.html">Test</a></li>
+                  <li><a href="scoreboard.php">Scoreboard</a></li>
+                  <li><a href="account.html">Account</a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#" onclick="signOut();">Sign out</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <meta name="google-signin-client_id" content="833283724043-60mn1u2ekeacj2fmpupmtvpq6rd37eab.apps.googleusercontent.com">
+      <script>
+         function signOut() {
+           var auth2 = gapi.auth2.getAuthInstance();
+           auth2.signOut().then(function () {
+           console.log('User signed out.');
+           window.sessionStorage.setItem("personName", null);
+           window.sessionStorage.setItem("personEMail", null);
+           window.location = "index.html";
+           });
+         }
+           function onLoad() {
+             gapi.load('auth2', function() {
+               gapi.auth2.init();
+             });
+           }
+      </script>
+      <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+      <div class="jumbotron text-center">
+         <h1>Train 3</h1>
+         <h3>Type the digit corresponding to each of the challenge letters.</h3>
+      </div>
+      <div class="divTable">
+         <div id="divTableBody" class="divTableBody">
+         </div>
+      </div>
+      <div id="workspace">
+      </div>
+      <div id="workspace2">
+         <input id = "textBox" maxlength="1" type='text' pattern="[0-9]*" onkeyup="limitInput(this)">
+      </div>
+      <script src="dbAccess.js"> </script>
+      <script>
+         var uName = window.sessionStorage.getItem("personName");
+         var uEMail = window.sessionStorage.getItem("personEMail");
+         var uSessionToken = window.sessionStorage.getItem("sessionToken");
+         var globalMap = [];
+         var letterVal = -1;
+         var letterPos = -1;
+         var lettersPassed = 0;
+         var colors = ["#f44336","#9C27B0","#3F51B5","#03A9F4","#009688","#8BC34A","#FFEB3B","#FF9800","#9E9E9E","#795548"];
+                
+         var startTime = new Date().getTime();
+         
+         window.onbeforeunload = function(){
+           console.log("leaving and adding");
+           if(lettersPassed != 0){
+             addTrainAttemptToDBSuccessSync(uEMail,globalMap.join(),"3",lettersPassed,uSessionToken,function(){}); 
+           }
+         };
+         
+         document.getElementById("textBox").focus()
+
+         //use this.responseText to populate table
+         cb2 = function(){
+           //extract map from JSON response
+           console.log(this.responseText);
+           row =  JSON.parse(this.responseText);
+           map = row[0].Map.split(',')
+           globalMap = map
+         
+           var table = document.getElementById("divTableBody");
+           letters = new Array()
+           
+           //generate letters array
+           for (i = 0; i < 26; i++){
+             letters[i] = String.fromCharCode('A'.charCodeAt() + i);
+           }
+         
+           //populate table
+           var tr = document.createElement('div'); //new row
+           tr.className = "divTableRow";
+           for (i = 0; i < map.length; i++) {
+                 var td = document.createElement('div'); //for letter
+                 td.className = "divTableCell";
+                 td.innerHTML = letters[i];
+                 tr.appendChild(td)
+                 td.style["color"] = colors[globalMap[i]]
+             } 
+             table.appendChild(tr);      
+         
+           var tr = document.createElement('div'); //new row
+           tr.className = "divTableRow";
+           for (i = 0; i < map.length; i++) {
+                 var td = document.createElement('div'); //for letter
+                 td.className = "divTableCell";
+                 td.innerHTML = globalMap[i] 
+                 td.style["color"] = colors[globalMap[i]];
+                 tr.appendChild(td)
+             } 
+             table.appendChild(tr);
+         
+             letterPos = Math.floor(Math.random()*26)
+             letterVal = globalMap[letterPos];
+             document.getElementById("workspace").innerHTML = String.fromCharCode('A'.charCodeAt() + letterPos);
+             document.getElementById("workspace").style.color = colors[globalMap[letterPos]];
+             document.getElementById("textBox").style.color = colors[globalMap[letterPos]];
+             document.getElementById("divTableBody").getElementsByClassName('divTableRow')[1].getElementsByClassName('divTableCell')[letterPos].innerHTML="~";
+         
+             cbTraining = function(){} 
+         
+         }//cb2
+         getMapFromDBSuccess(uEMail,uSessionToken,cb2);
+         
+         function limitInput(element){
+           console.log(element.value);
+           console.log(letterVal);
+           if (element.value == letterVal){
+             lettersPassed += 1;
+             document.getElementById("divTableBody").getElementsByClassName('divTableRow')[1].getElementsByClassName('divTableCell')[letterPos].innerHTML=letterVal;
+             letterPos = Math.floor(Math.random()*26)
+             letterVal = globalMap[letterPos];
+             document.getElementById("workspace").innerHTML = String.fromCharCode('A'.charCodeAt() + letterPos);
+             document.getElementById("workspace").style.color = colors[globalMap[letterPos]];
+             document.getElementById("textBox").style.color = colors[globalMap[letterPos]];
+             document.getElementById("textBox").value = "";
+             document.getElementById("divTableBody").getElementsByClassName('divTableRow')[1].getElementsByClassName('divTableCell')[letterPos].innerHTML="~";
+             document.getElementById("textBox").focus()
+           }
+         }  
+      </script>
+   </body>
+</html>

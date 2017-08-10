@@ -1,0 +1,40 @@
+date: October 4, 2016
+meeting_type: ta
+attendance: [rktaylor, jacondel, alee22, yonghyun, bpriexin, kangmink]
+absent: [None]
+excused_absences: [
+  {None},
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Added a minutes count to the timer. Added a lot of functionality to the actual memory test itself; it's almost completely ready},
+  {ubit: alee22, progress: Applying fixes to rktaylor's code.},
+  {ubit: jacondel, progress: Fixed the database. It is ready to have information sent and pulled from it.},
+  {ubit: yonghyun, progress: Replaced our login page. Has a professional look, and works with what bpriexin wrote for Google API logins.},
+  {ubit: bpriexin, progress: Tried to resolve a problem with permissions/security, configured the server a lot, configured Google API, oh my!},
+  {ubit: kangmink, progress: Made a scoreboard, usable for the results page. }
+  ]
+issues: [
+  {ubit: rktaylor, issue: Looks like nobody met for their student meetings. Including Andrew, who I tried to meet with, but he was sick.}
+  {ubit: rktaylor, issue: My HTML code also includes all CSS and Javascript inline. May cause technical problems.}
+  ]
+Notes:  | 
+Ryan had to do Andrew's job. Andrew is now bugfixing what Ryan did.
+Julius broke some of Ben's functionality at one point. Ben had to do a little extra work because of that.
+
+We will send AJAX requests to the php files with javascript to access the database. Jacob has already written that javascript for us.
+Our video submission for Sprint2 can be just a compilation of what each subgroup has accomplished;
+We do not need to strain ourselves to get everything working together perfectly yet. That'll probably be Sprint 3 or 4.
+HOWEVER, we do all need to have files in the Master branch by the end of Sprint 2.
+
+New Tasks--
+We have five pages that we need to link together properly, both for moving foward and backward.
+The test page has plenty of bugs.
+Login has to be integrated with DB, and login credentials maintained as the user progresses.
+The test page will have to implement the DB usage to get the map that was generated.
+The Training Page is still completely undesigned.
+
+Specific tasks for Andrew and Ryan:
+Andrew's gonna create our Youtube video, and also fix the bugs related to the generation of numbers on the test page.
+Ryan's gonna change the test page to include a little more CSS, and also fix the bugs related to determining correct answers and randomizing the correctness of the answer choices.
+
+Everyone else is just gonna keep doing what they were doing; they were doing a good job.

@@ -1,0 +1,17 @@
+date: November 19, 2016
+meeting_type: student
+attendance: [jacondel, bpriexin, alee22]
+absent: [yonghyun, kangmink, rktaylor]
+excused_absences: [
+  {ubit: rktaylor: had all his tasks completed.}
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Tasks completed.},
+  {ubit: alee22, progress: Finished adding badges checks to all appropriate pages.},
+  {ubit: jacondel, progress: Created a mnemonic page.  Modified Train 2 to limit one character guesses and removed timer.},
+  {ubit: yonghyun, progress: },
+  {ubit: bpriexin, progress: Added php and sql for awarding badges.},
+  {ubit: kangmink, progress: }
+  ]
+Notes:  | 
+We will shoot the video today when we are done.  If everyone else pushes their code before Sunday night we will include it in the video.  Not staying up till 3a again to shoot the video.

@@ -1,0 +1,20 @@
+meeting_type: ta
+attendance: [rktaylor, jacondel, alee22, yonghyun]
+absent: [bpriexin, kangmink]
+excused_absences: [
+  {ubit: bpriexin, : reason: Had to work, didn't know we were meeting.},
+  {ubit: kangmink, : None},
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Research, no more},
+  {ubit: alee22, progress: Research},
+  {ubit: jacondel, progress: Created the basic list generator, and has improved it a lot},
+  {ubit: yonghyun, progress: }
+  ]
+issues: [
+  {ubit: rktaylor, issue: Half of us showed up for the second manditory meeting.}
+  ]
+Notes:  | # Anything covered in the meeting that doesn't fit elsewhere.
+  Created repo named: memory1
+  Got some code on the repo.
+  Everyone except Julius can meet 9/14 at 2.

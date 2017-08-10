@@ -1,0 +1,41 @@
+date: November 1, 2016
+meeting_type: ta
+attendance: [rktaylor, jacondel, bpriexin, yonghyun, alee22]
+absent: [kangmink]
+excused_absences: [
+  {ubit: kagmink, excuse: Car problems.}
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Helped Andrew finish his task, and fixed test page bugs.},
+  {ubit: alee22, progress: Uploaded Sprint video, finished Train2.html.},
+  {ubit: jacondel, progress: Bug fixed the DB code with Ben, moved Ben's logout button.},
+  {ubit: yonghyun, progress: },
+  {ubit: bpriexin, progress: Moved our complete version of the website from Jacob's folder to the main location. A.dded Log Out button.},
+  {ubit: kangmink, progress: Got the scoreboard on the main site.}
+  ]
+issues: [
+  {ubit: everyone, issue: What if someone hits the back button on their browser durng the test?}
+  {ubit: everyone, issue: Besides implementing a timer, how do we stop people from cheating during the test (writing down their map on paper)?}
+  {ubit: anyone, issue: A user-agreement document may need to be written because our purpose is research.
+  {ubit: everyone, issue: We still don't have much in the way of incentive for users. Would any of us want to participate in our research?}
+  ]
+Notes:  | 
+We need the whole train3 page. It should include audio/visual/movement.
+We need the test page to return more information to the DB. At a minimum, time remaining. At best, which Q's were answered right+wrong.
+Test page should not have radio buttons anymore; it should have all 10 buttons appear so guessing is much more difficult OR...
+Test page should take away points for a wrong answer, and have an option to pass a question.
+Test page and Train2 page need CSS.
+Test page should have that Begin Test button removed (quick and easy).
+Train2 needs more feedback for wrong answers, or else it gets boring.
+Train2 needs its table displayng properly.
+The technical issues above.
+Train1 could get some CSS that adjusts font colors as stuff is typed, and text box should always be "on focus" (don't have to keep clicking it).
+Scoreboard should not display e-mails, it should display a name instead.
+Security Problems include logout verification, cookie redirecting (login verification), and converting scoreboard to .html instead of .php.
+Instructions could be added to each page.
+Realistic task could be posting scores to facebook.
+Could give people badges for various accomplishments?
+
+Are we gonna keep this thing open-source? Sounds like nobody objects to that. (That requires a licence, otherwise we just have default copyright.)
+
+NOTE FOR GRADING, I (rktaylor) tend to understate everyone else's tasks, because there's too much going on at once during our meetings.

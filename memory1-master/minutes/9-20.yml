@@ -1,0 +1,36 @@
+date: September 20, 2016
+meeting_type: ta
+attendance: [rktaylor, jacondel, alee22, yonghyun, bpriexin, kangmink]
+absent: [None]
+excused_absences: [
+  {None},
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Created and proposed a plan for the whole user experience, messed with Jacob's code a bit},
+  {ubit: alee22, progress: Created and submitted the Sprint1 video},
+  {ubit: jacondel, progress: Created the different branches on GitHub},
+  {ubit: yonghyun, progress: },
+  {ubit: bpriexin, progress: Got us a server on Amazon AWS},
+  {ubit: kangmink, progress: Got a database}
+  ]
+issues: [
+  {ubit: rktaylor, issue: None}
+  ]
+Notes:  | # Anything covered in the meeting that doesn't fit elsewhere.
+Andrew keeps providing food for us.
+
+Sprint 2 Req's:
+-Make sure to keep submitting these minutes to the DEVELOP branch.
+ +You must have 3 TA meetings, 3 Student meetings, and 1 instructor meeting.
+-You get points for showing up to the meetings, and communicating in general.
+-Push your code to the FEATURE branch first.
+-Make sure every week you have a commit submitted.
+
+We now have the "Issues" tab in GitHub, each major task has one, with two people per task.
+If we use a password system, we need to make the server more secure (people have to learn hashing)
+Ben propsed us using Google API and people's google accounts. Login with email.
+
+TASKS
+Someone work on the "Start Page"; how we'll store the data and the actual design of the page.
+Someone make the test. It should be a sequence of challenges. One person designs the skeleton of the page (me!), the other designs the challenge itself.
+Someone has to handle the data created by users' results.

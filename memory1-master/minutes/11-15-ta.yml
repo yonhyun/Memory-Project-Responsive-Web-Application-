@@ -1,0 +1,28 @@
+date: November 15, 2016
+meeting_type: ta
+attendance: [rktaylor, jacondel, bpriexin, yonghyun, alee22, kangmink]
+absent: []
+excused_absences: [
+  {}
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Tediously merged my previous changes onto s4-serverside in GitHub, added right/wrong feedback to test.html},
+  {ubit: alee22, progress: Ugh, check GitHub for everyone else, busy meeting..},
+  {ubit: jacondel, progress: ""},
+  {ubit: yonghyun, progress: ""},
+  {ubit: bpriexin, progress: ""},
+  {ubit: kangmink, progress: ""}
+  ]
+issues: [
+  {ubit: anyone, issue: A user-agreement document may need to be written because our purpose is research.
+  {ubit: rktaylor, issue: Only test.html updates on my server folder for some reason.}
+  ]
+Notes:  | 
+We are going to do beta testing on 11/16 at 2pm. We will need a debug/suggestion form for users to fill out, and whatever else.
+
+Train2 needs more feedback for wrong answers, or else it gets boring.
+Security Problems include logout verification, cookie redirecting (login verification), and converting scoreboard to .html instead of .php.
+Instructions could be added to each page.
+The badge graphics must be credited as being from... wherever they came from.
+
+NOTE FOR GRADING, I (rktaylor) tend to understate everyone else's tasks, because there's too much going on at once during our meetings.

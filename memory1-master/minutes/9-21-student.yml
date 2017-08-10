@@ -1,0 +1,26 @@
+date: September 21, 2016
+meeting_type: student
+attendance: [rktaylor, jacondel, alee22, bpriexin, kangmink]
+absent: [yonghyun]
+excused_absences: [
+  {ubit: yonghyun, excuse: had class or had to work}
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Nothing},
+  {ubit: alee22, progress: Nothing},
+  {ubit: jacondel, progress: Nothing},
+  {ubit: yonghyun, progress: Not present},
+  {ubit: bpriexin, progress: Got Google authentication for Javascript, gave everyone instructions for Amazon AWS access},
+  {ubit: kangmink, progress: Edited the database}
+  ]
+issues: [
+  {None}
+  ]
+Notes:  | # Anything covered in the meeting that doesn't fit elsewhere.
+We've kind of split into three subgroups:
+Andrew and Ryan focus on the client-side experience; the "gameplay" itself kinda.
+Ben and Julius focus on the server; how user data can be retrieved and used.
+Kang and Jacob focus on the database; how user data can be stored.
+
+Perhaps instead of having one big student meeting RIGHT after the TA meeting, we should
+have meetings within our "subgroups"...

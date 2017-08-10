@@ -1,0 +1,221 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+   <head>
+      <title>Memory 1</title>
+      <link rel="stylesheet" 
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <style>
+        .navbar {
+          margin-bottom: 0;
+        }
+
+        .navbar-inverse {
+          background-color: #222222;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+          background-color: #045FB4;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+          background-color: #222222;
+        }
+
+        .dropdown-menu {
+          background-color: #222222;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          background-color: #045FB4;
+        }
+
+        .navbar-inverse {
+          background-image: none;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          background-image: none;
+        }
+
+        .navbar-inverse {
+          border-color: #080808;
+        }
+
+        .navbar-inverse .navbar-brand {
+          color: #999999;
+        }
+
+        .navbar-inverse .navbar-brand:hover {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>li>a {
+          color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu>li>a {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a .caret {
+          border-top-color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+          border-top-color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a .caret {
+          border-bottom-color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+          border-bottom-color: #FFFFFF;
+        }
+
+        .jumbotron {
+          background-color: #045FB4;
+          color: #fff;
+          padding: 140px 25px;
+          font-family: Montserrat, sans-serif;
+        }
+
+        .col-centered {
+          display: inline-block;
+          float: none;
+                 /* reset the text-align */
+          text-align: left;
+                 /* inline-block space fix */
+          margin-right: -4px;
+        }
+          
+        .col-centered {
+          float: none;
+          margin: 0 auto;
+        }
+      </style>
+   </head>
+   <body>
+      <script>
+         var uName = window.sessionStorage.getItem("personName");
+         if(uName == "null" || uName === null){
+             window.location = "index.html";    
+         }
+      </script>
+      <nav class="navbar navbar-inverse navbar-static-top">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="main.html">Home</a></li>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Train <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="train1.html">Training Method 1</a></li>
+                        <li><a href="train2.html">Training Method 2</a></li>
+                        <li><a href="train3.html">Training Method 3</a></li>
+                        <li><a href="mnemonic.html">Setup Mnemonic</a></li>
+                        <li><a href="trainHistory.html">Train History</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="test.html">Test</a></li>
+                  <li><a href="scoreboard.php">Scoreboard</a></li>
+                  <li><a href="account.html">Account</a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#" onclick="signOut();">Sign out</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <meta name="google-signin-client_id" content="833283724043-60mn1u2ekeacj2fmpupmtvpq6rd37eab.apps.googleusercontent.com">
+      <script>
+         function signOut() {
+           var auth2 = gapi.auth2.getAuthInstance();
+           auth2.signOut().then(function () {
+             console.log('User signed out.');
+             window.sessionStorage.setItem("personName", null);
+             window.sessionStorage.setItem("personEMail", null);
+             window.location = "index.html";
+           });
+         }
+           function onLoad() {
+             gapi.load('auth2', function() {
+               gapi.auth2.init();
+             });
+           }
+      </script>
+      <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+      <div class="jumbotron text-center">
+      <h1>Memory Project</h1>
+      <p>Group project for CSE442</p>
+      <p id=>You have logged in.</p>
+      <div id="welcome"> </div>
+      <script src="dbAccess.js"> </script>
+      <script>
+         var uName = window.sessionStorage.getItem("personName");
+         var uEMail = window.sessionStorage.getItem("personEMail");
+         var uSessionToken = window.sessionStorage.getItem("sessionToken");
+         document.getElementById("welcome").innerHTML += "Welcome "+ uName+ "!"
+         document.getElementById("welcome").innerHTML += "</br> "+ uEMail
+
+         //addEmailToDB(uEMail,uName);
+         console.log("Ran email to db");
+         
+         //add user to database
+         cb = function() {};
+         addEmailToDBSuccess(uEMail,uName,uSessionToken,cb);
+         
+         //use this.responseText to populate table
+         checkMap = function(){
+           //extract map from JSON response
+
+           if (this.readyState == 4 && this.status == 200) {
+              console.log("good");
+            }else{
+              console.log("bad");
+            }
+            console.log(this.responseText);
+           row =  JSON.parse(this.responseText);
+           if(row){
+             map = row[0].Map.split(',')
+             console.log("yesmap");
+           }else{
+             console.log("nomap");
+             newMap = new Array()
+             for (i = 0; i < 26; i++){
+               newMap[i] = Math.floor(Math.random()*10)
+             }
+             setMapInDBSuccess(uEMail,newMap, uSessionToken,function(){})
+           }
+         }//checkMap
+         console.log("getmap with " + uEMail + " " + uSessionToken);
+         getMapFromDBSuccess(uEMail,uSessionToken,checkMap);    
+      </script>
+   </body>
+</html>

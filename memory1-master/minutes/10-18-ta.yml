@@ -1,0 +1,23 @@
+date: October 18, 2016
+meeting_type: ta
+attendance: [rktaylor, jacondel, alee22, bpriexin, kangmink, yonghyun]
+absent: [None]
+excused_absences: [
+  {None}
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Applied Jacob's DB code to the Test Page (untested). Also, prevented repeat Q's in the test.},
+  {ubit: alee22, progress: },
+  {ubit: jacondel, progress: Wrote functions to pull data from the DB, and applied them to the Home page.},
+  {ubit: yonghyun, progress: Didn't die.},
+  {ubit: bpriexin, progress: },
+  {ubit: kangmink, progress: }
+  ]
+issues: [
+  {ubit: rktaylor, issue: What #'s should the map generate? For research purposes, 0-9 or 1-26?}
+  ]
+Notes:  | 
+We need to link our pages together so we can make sure stuff works!
+
+Specific Tasks:
+Ryan: Still need to test DB usage code. Also, need to implement sending score to DB, which requires pulling user e-mail.

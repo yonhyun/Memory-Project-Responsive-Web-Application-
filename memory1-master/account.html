@@ -1,0 +1,320 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+<title>Memory 1</title>
+<link rel="stylesheet" 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+  #workspace{
+    text-align: center;
+    font-size : 40px;
+    font-family: Montserrat, sans-serif;
+    color: #045FB4;
+  }
+
+   #workspace2{
+    text-align: center;
+    font-size : 40px;
+    font-family: Montserrat, sans-serif;
+    color: #045FB4;
+
+  }
+
+  #workspace3{
+    text-align: center;
+    font-size : 40px;
+    font-family: Montserrat, sans-serif;
+    color: #045FB4;
+  }
+  
+  #textBox{
+    text-align: center;
+    font-size : 40px;
+    font-family: Montserrat, sans-serif;
+    color: #045FB4;
+  }
+
+  td {
+      height: 100px;
+      font-size: 40px;
+    }
+    #t2{
+      color:white; 
+      height:100px; 
+      text-align:center;
+      border:none;
+      background: none;
+    }
+
+    .navbar { margin-bottom: 0; }
+    
+   .navbar-inverse { background-color: #222222}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #045FB4}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #222222}
+.dropdown-menu { background-color: #222222}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #045FB4}
+.navbar-inverse { background-image: none; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
+.navbar-inverse { border-color: #080808}
+.navbar-inverse .navbar-brand { color: #999999}
+.navbar-inverse .navbar-brand:hover { color: #FFFFFF}
+.navbar-inverse .navbar-nav>li>a { color: #999999}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #FFFFFF}
+.dropdown-menu>li>a { color: #FFFFFF}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-top-color: #999999}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #999999}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
+
+  	.jumbotron {
+      background-color: #045FB4;
+      color: #fff;
+      padding: 50px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+    .col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+</style>
+</head>
+<body>
+<script>
+    var uName = window.sessionStorage.getItem("personName");
+    if(uName == "null" || uName === null){
+        window.location = "index.html";    
+    }
+</script>
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="main.html">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Train <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="train1.html">Training Method 1</a></li>
+            <li><a href="train2.html">Training Method 2</a></li>
+            <li><a href="train3.html">Training Method 3</a></li>
+            <li><a href="mnemonic.html">Setup Mnemonic</a></li>
+            <li><a href="trainHistory.html">Train History</a></li>
+          </ul>
+        </li>
+        <li><a href="test.html">Test</a></li>
+        <li><a href="scoreboard.php">Scoreboard</a></li>
+        <li class="active"><a href="account.html">Account</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" onclick="signOut();">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="833283724043-60mn1u2ekeacj2fmpupmtvpq6rd37eab.apps.googleusercontent.com">
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+    console.log('User signed out.');
+    window.sessionStorage.setItem("personName", null);
+	window.sessionStorage.setItem("personEMail", null);
+        window.location = "index.html"
+    });
+  }
+    function onLoad() {
+      gapi.load('auth2', function() {
+        gapi.auth2.init();
+      });
+    }
+</script>
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+
+  <div class="jumbotron text-center">
+  <h1>Account Page</h1>
+  </div>
+
+
+  <div id="workspace">
+    <button id ="generate" onclick="generate()">Generate New Map</button>
+  </div>
+
+
+ </br>
+
+  <div id="workspace2">
+    <input id = "textBox" type='text' >
+  </div>
+
+  </br>
+  
+  <div id="workspace3">
+    <button id ="updateAlias" onclick="updateAlias()">Update Alias</button>
+  </div>
+
+  </br>
+  <div id="status">
+  
+  <div style="text-align: center;">
+	<input type="image" id="badge1" src="images/Train1alt.png" value="Badge1" onclick="badgeInfo1()" />
+
+	<input type="image" id="badge2" src="images/Train2alt.png" value="Badge2" onclick="badgeInfo2()" />
+
+	<input type="image" id="badge3" src="images/Train3alt.png" value="Badge3" onclick="badgeInfo3()" />
+
+	<input type="image" id="badge4" src="images/AllWrong2.png" value="Badge4" onclick="badgeInfo4()" />
+		
+	<input type="image" id="badge5" src="images/AllCorrect2.png" value="Badge5" onclick="badgeInfo5()" />
+
+	<input type="image" id="badge6" src="images/Google2.png" value="Badge6" onclick="badgeInfo6()" />
+
+	<input type="image" id="badge7" src="images/LeaderBoard2.png" value="Badge7" onclick="badgeInfo7()" />
+
+	<p id="info"></p>
+	</div>
+
+
+<script src="dbAccess.js"> </script>
+
+<script>
+  var count = 1;
+  var uName = window.sessionStorage.getItem("personName");
+  var uEMail = window.sessionStorage.getItem("personEMail");
+  var uSessionToken = window.sessionStorage.getItem("sessionToken");
+  var badge = new Array();
+  window.sessionStorage.getItem("badge");
+
+
+  getAliasSuccess(uEMail,uSessionToken,function(){
+    console.log(JSON.parse(this.responseText)[0].Alias);
+    document.getElementById("textBox").value = JSON.parse(this.responseText)[0].Alias;
+  });
+
+  function generate(){
+    cb = function(){
+        alert(this.responseText);
+    }
+    newMap = new Array()
+    for (i = 0; i < 26; i++){
+      newMap[i] = Math.floor(Math.random()*10)
+    }
+    setMapInDBSuccess(uEMail,newMap,uSessionToken,cb); 
+
+	
+  }
+  cb2 = function(){}
+   addGoogleBadgeToDBSuccess(uEMail,uSessionToken,cb2);
+   addTrainMod1BadgeToDBSuccess(uEMail,uSessionToken,cb2);
+   addTrainMod2BadgeToDBSuccess(uEMail,uSessionToken,cb2);
+   addTrainMod3BadgeToDBSuccess(uEMail,uSessionToken,cb2);
+
+
+
+  function updateAlias(){
+    cb = function(){
+        alert(this.responseText);
+    }
+    addAliasSuccess(uEMail,document.getElementById("textBox").value,uSessionToken,cb); 
+  }
+  
+  	function badgeInfo1(){
+		document.getElementById('info').innerHTML="Completed Train 1";
+	}
+	
+	function badgeInfo2(){
+		document.getElementById('info').innerHTML="Completed Train 2";
+	}
+	
+	function badgeInfo3(){
+		document.getElementById('info').innerHTML="Completed Train 3";
+	}
+	
+	function badgeInfo4(){
+		document.getElementById('info').innerHTML="Failed a test";
+	}
+	
+	function badgeInfo5(){
+		document.getElementById('info').innerHTML="All correct on test";
+	}
+	
+	function badgeInfo6(){
+		document.getElementById('info').innerHTML="Added a friend on google+";
+	}
+	
+	function badgeInfo7(){
+		document.getElementById('info').innerHTML="Number 1";
+	}
+	
+	function changeBadge1(){
+		var img = document.getElementById("badge1");
+		img.src="images/Train1.png";
+	}
+	function changeBadge2(){
+		var img = document.getElementById("badge2");
+		img.src="images/Train2.png";
+	}
+	function changeBadge3(){
+		var img = document.getElementById("badge3");
+		img.src="images/Train3.png";
+	}
+	function changeBadge4(){
+		var img = document.getElementById("badge4");
+		img.src="images/AllWrong.png";
+	}
+	function changeBadge5(){
+		var img = document.getElementById("badge5");
+		img.src="images/AllCorrect.png";
+	}
+	function changeBadge6(){
+		var img = document.getElementById("badge6");
+		img.src="images/Google.png";
+	}
+	function changeBadge7(){
+		var img = document.getElementById("badge7");
+		img.src="images/LeaderBoard.png";
+	}
+	
+	
+  cb3 = function(){
+	row = JSON.parse(this.responseText);
+	console.log("in call back");
+	for(var i=0;i<row.length;i++){
+		if (row[i].BadgeName == "Train1.png") changeBadge1();
+		if (row[i].BadgeName == "Train2.png") changeBadge2();
+		if (row[i].BadgeName == "Train3.png") changeBadge3();
+		if (row[i].BadgeName == "AllWrong.png") changeBadge4();
+		if (row[i].BadgeName == "AllCorrect.png") changeBadge5();
+		if (row[i].BadgeName == "Google.png") changeBadge6();
+		if (row[i].BadgeName == "LeaderBoard.png") changeBadge7();
+		}
+  }
+
+  getBadgeFromDBSuccess(uEMail,uSessionToken,cb3);
+  
+
+</script>
+
+</body>
+</html>

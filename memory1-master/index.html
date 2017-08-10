@@ -1,0 +1,51 @@
+<html lang="en">
+   <head>
+      <title>Memory 1</title>
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <style>
+        .jumbotron {
+          background-color: #045FB4;
+          color: #fff;
+          padding: 140px 25px;
+          font-family: Montserrat, sans-serif;
+        }
+
+        .col-centered {
+          display: inline-block;
+          float: none;
+                 /* reset the text-align */
+          text-align: left;
+                 /* inline-block space fix */
+          margin-right: -4px;
+        }
+
+        .col-centered {
+          float: none;
+          margin: 0 auto;
+        }
+      </style>
+   </head>
+   <body>
+      <div class="jumbotron text-center">
+      <h1>Memory Project</h1>
+      <p>Group project for CSE442</p>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script src="dbAccess.js"> </script>
+      <meta name="google-signin-client_id" content="833283724043-60mn1u2ekeacj2fmpupmtvpq6rd37eab.apps.googleusercontent.com">
+      <div align="center" class="g-signin2" data-onsuccess="onSignIn"></div>
+      <script>function onSignIn(googleUser) {
+         var profile = googleUser.getBasicProfile();
+         window.sessionStorage.setItem("personName", profile.getName());
+         window.sessionStorage.setItem("personEMail", profile.getEmail());
+         var sessionToken = Math.floor(Math.random()*16777215).toString(16);
+         window.sessionStorage.setItem("sessionToken", sessionToken);
+         var idToken = googleUser.getAuthResponse().id_token;
+         console.log(idToken);
+         //addSessionTokenToDBSuccess(profile.getEmail(),sessionToken,idToken,function(){});
+         addSessionTokenToDBSuccess(profile.getEmail(),sessionToken,idToken,function(){
+          window.location = "main.html";
+         });
+         }
+      </script>
+   </body>
+</html>

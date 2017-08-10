@@ -1,0 +1,16 @@
+date: October 27, 2016
+meeting_type: student
+attendance: [bpriexin, alee22]
+absent: [rktaylor, jacondel, kangmink, yonghyun]
+excused_absences: [
+  {ubit: all absent, excuse: We weren't really meant to be a part of this meeting.}
+  ]
+task_progress: [
+  {ubit: alee22, progress: Has been designing a training page similar to the test page.},
+  {ubit: bpriexin, progress: Got Andrew caught up, so now Andrew should know how we all have our own directory in the server, etc.}
+  ]
+issues: [
+  {ubit: everyone, isuue: We rely on the user having a cookie/authentication token before they can access stuff. We don't know what to do if a cookie expires.}
+  ]
+Notes:  | 
+Andrew also met with Mike briefly to make up for missing the 10/25 ta meeting.

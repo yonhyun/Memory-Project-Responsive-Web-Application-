@@ -1,0 +1,471 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+   <head>
+      <title>Memory 1</title>
+      <link rel="stylesheet" 
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <style>
+        #workspace {
+          text-align: center;
+          font-size: 40px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+
+        #workspace2 {
+          text-align: center;
+        }
+
+        #workspace3 {
+          text-align: center;
+          font-size: 20px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+        #workspace4{
+    text-align: center;
+    font-size : 20px;
+    font-family: Montserrat, sans-serif;
+    color: #045FB4;
+  }
+
+        #textBox {
+          text-align: center;
+          font-size: 40px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+        #t2{
+      color:white; 
+      height:100px; 
+      text-align:center;
+      border:none;
+      background: none;
+    }
+    #myProgress {
+  position: relative;
+  width: 29%;
+  height: 30px;
+  background-color: #ddd;
+}
+    #myBar {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #045FB4;
+}
+#label {
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+        .divTable {
+          display: table;
+          width: 100%;
+          table-layout: fixed;
+          color: white;
+          height: 100px;
+          text-align: center;
+          border: none;
+          background: none;
+        }
+
+        .divTableRow {
+          display: table-row;
+        }
+
+        .divTableCell {
+          display: table-cell;
+          height: 100px;
+          font-size: 40px;
+          vertical-align: middle;
+        }
+
+
+        .divTableBody {
+          display: table-row-group;
+        }
+
+        @media screen and (max-width: 768px) {
+          .divTableCell {
+            height: 25px;
+            font-size: 10px;
+            border-spacing: 0px;
+          }
+
+          .divTable {
+            height: 25px;
+          }
+
+          #textBox {
+            font-size: 10px;
+          }
+
+          #workspace {
+            font-size: 10px;
+          }
+        }
+
+        .navbar {
+          margin-bottom: 0;
+        }
+
+        .navbar-inverse {
+          background-color: #222222;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+          background-color: #045FB4;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+          background-color: #222222;
+        }
+
+        .dropdown-menu {
+          background-color: #222222;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          background-color: #045FB4;
+        }
+
+        .navbar-inverse {
+          background-image: none;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          background-image: none;
+        }
+
+        .navbar-inverse {
+          border-color: #080808;
+        }
+
+        .navbar-inverse .navbar-brand {
+          color: #999999;
+        }
+
+        .navbar-inverse .navbar-brand:hover {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>li>a {
+          color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu>li>a {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a .caret {
+          border-top-color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+          border-top-color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a .caret {
+          border-bottom-color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+          border-bottom-color: #FFFFFF;
+        }
+
+        .jumbotron {
+          background-color: #045FB4;
+          color: #fff;
+          padding: 50px 25px;
+          font-family: Montserrat, sans-serif;
+        }
+
+        .col-centered {
+          display: inline-block;
+          float: none;
+                 /* reset the text-align */
+          text-align: left;
+                 /* inline-block space fix */
+          margin-right: -4px;
+        }
+
+        .col-centered {
+          float: none;
+          margin: 0 auto;
+        }
+      </style>
+   </head>
+   <body>
+      <script>
+         var uName = window.sessionStorage.getItem("personName");
+         if(uName == "null" || uName === null){
+             window.location = "index.html";    
+         }
+      </script>
+      <nav class="navbar navbar-inverse navbar-static-top">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+               <ul class="nav navbar-nav">
+                  <li><a href="main.html">Home</a></li>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Train <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li class="active"><a href="train1.html">Training Method 1</a></li>
+                        <li><a href="train2.html">Training Method 2</a></li>
+                        <li><a href="train3.html">Training Method 3</a></li>
+                        <li><a href="mnemonic.html">Setup Mnemonic</a></li>
+                        <li><a href="trainHistory.html">Train History</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="test.html">Test</a></li>
+                  <li><a href="scoreboard.php">Scoreboard</a></li>
+                  <li><a href="account.html">Account</a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#" onclick="signOut();">Sign out</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <meta name="google-signin-client_id" content="833283724043-60mn1u2ekeacj2fmpupmtvpq6rd37eab.apps.googleusercontent.com">
+      <script>
+         function signOut() {
+           var auth2 = gapi.auth2.getAuthInstance();
+           auth2.signOut().then(function () {
+           console.log('User signed out.');
+           window.sessionStorage.setItem("personName", null);
+         window.sessionStorage.setItem("personEMail", null);
+               window.location = "index.html";
+           });
+         }
+           function onLoad() {
+             gapi.load('auth2', function() {
+               gapi.auth2.init();
+             });
+           }
+      </script>
+      <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+      <div class="jumbotron text-center">
+         <h1>Train 1</h1>
+         <h3>Type the digits corresponding to each letter in the challenge word.</h3>
+      </div>
+      <div id="workspace">
+      </div>
+      <div id="workspace2">
+         <input id ="textBox" type='text' pattern="[0-9]*" onkeyup="limitInput(this)">
+      </div>
+      <div id="workspace3">
+      </div>
+      <div id="workspace4">
+    <div class="col-centered" id="myProgress">
+    <div id="myBar">
+    <div id="label">0%</div>
+  </div>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+
+  </div>
+      <div class="divTable">
+         <div id="divTableBody" class="divTableBody">
+         </div>
+      </div>
+      <script src="dbAccess.js"> </script>
+      <script>
+         var uName = window.sessionStorage.getItem("personName");
+         var uEMail = window.sessionStorage.getItem("personEMail");
+         var uSessionToken = window.sessionStorage.getItem("sessionToken");
+         var globalMap = [];
+         var numRight = 0;
+         var goalRight = 5;
+         var startTime = new Date().getTime();
+         var words = ["A","ABLE","ABOUT","ACCOUNT","ACID","ACROSS","ACT","ADDITION","ADJUSTMENT","ADVERTISEMENT","AFTER","AGAIN","AGAINST","AGREEMENT","AIR","ALL","ALMOST","AMONG","AMOUNT","AMUSEMENT","AND","ANGLE","ANGRY","ANIMAL","ANSWER","ANT","ANY","APPARATUS","APPLE","APPROVAL","ARCH","ARGUMENT","ARM","ARMY","ART","AS","AT","ATTACK","ATTEMPT","ATTENTION","ATTRACTION","AUTHORITY","AUTOMATIC","AWAKE","BABY","BACK","BAD","BAG","BALANCE","BALL","BAND","BASE","BASIN","BASKET","BATH","BE","BEAUTIFUL","BECAUSE","BED","BEE","BEFORE","BEHAVIOUR","BELIEF","BELL","BENT","BERRY","BETWEEN","BIRD","BIRTH","BIT","BITE","BITTER","BLACK","BLADE","BLOOD","BLOW","BLUE","BOARD","BOAT","BODY","BOILING","BONE","BOOK","BOOT","BOTTLE","BOX","BOY","BRAIN","BRAKE","BRANCH","BRASS","BREAD","BREATH","BRICK","BRIDGE","BRIGHT","BROKEN","BROTHER","BROWN","BRUSH","BUCKET","BUILDING","BULB","BURN","BURST","BUSINESS","BUT","BUTTER","BUTTON","BY","CAKE","CAMERA","CANVAS","CARD","CARE","CARRIAGE","CART","CAT","CAUSE","CERTAIN","CHAIN","CHALK","CHANCE","CHANGE","CHEAP","CHEESE","CHEMICAL","CHEST","CHIEF","CHIN","CHURCH","CIRCLE","CLEAN","CLEAR","CLOCK","CLOTH","CLOUD","COAL","COAT","COLD","COLLAR","COLOUR","COMB","COME","COMFORT","COMMITTEE","COMMON","COMPANY","COMPARISON","COMPETITION","COMPLETE","COMPLEX","CONDITION","CONNECTION","CONSCIOUS","CONTROL","COOK","COPPER","COPY","CORD","CORK","COTTON","COUGH","COUNTRY","COVER","COW","CRACK","CREDIT","CRIME","CRUEL","CRUSH","CRY","CUP","CUP","CURRENT","CURTAIN","CURVE","CUSHION","DAMAGE","DANGER","DARK","DAUGHTER","DAY","DEAD","DEAR","DEATH","DEBT","DECISION","DEEP","DEGREE","DELICATE","DEPENDENT","DESIGN","DESIRE","DESTRUCTION","DETAIL","DEVELOPMENT","DIFFERENT","DIGESTION","DIRECTION","DIRTY","DISCOVERY","DISCUSSION","DISEASE","DISGUST","DISTANCE","DISTRIBUTION","DIVISION","DO","DOG","DOOR","DOUBT","DOWN","DRAIN","DRAWER","DRESS","DRINK","DRIVING","DROP","DRY","DUST","EAR","EARLY","EARTH","EAST","EDGE","EDUCATION","EFFECT","EGG","ELASTIC","ELECTRIC","END","ENGINE","ENOUGH","EQUAL","ERROR","EVEN","EVENT","EVER","EVERY","EXAMPLE","EXCHANGE","EXISTENCE","EXPANSION","EXPERIENCE","EXPERT","EYE","FACE","FACT","FALL","FALSE","FAMILY","FAR","FARM","FAT","FATHER","FEAR","FEATHER","FEEBLE","FEELING","FEMALE","FERTILE","FICTION","FIELD","FIGHT","FINGER","FIRE","FIRST","FISH","FIXED","FLAG","FLAME","FLAT","FLIGHT","FLOOR","FLOWER","FLY","FOLD","FOOD","FOOLISH","FOOT","FOR","FORCE","FORK","FORM","FORWARD","FOWL","FRAME","FREE","FREQUENT","FRIEND","FROM","FRONT","FRUIT","FULL","FUTURE","GARDEN","GENERAL","GET","GIRL","GIVE","GLASS","GLOVE","GO","GOAT","GOLD","GOOD","GOVERNMENT","GRAIN","GRASS","GREAT","GREEN","GREY","GRIP","GROUP","GROWTH","GUIDE","GUN","HAIR","HAMMER","HAND","HANGING","HAPPY","HARBOUR","HARD","HARMONY","HAT","HATE","HAVE","HE","HEAD","HEALTHY","HEAR","HEARING","HEART","HEAT","HELP","HIGH","HISTORY","HOLE","HOLLOW","HOOK","HOPE","HORN","HORSE","HOSPITAL","HOUR","HOUSE","HOW","HUMOUR","I","ICE","IDEA","IF","ILL","IMPORTANT","IMPULSE","IN","INCREASE","INDUSTRY","INK","INSECT","INSTRUMENT","INSURANCE","INTEREST","INVENTION","IRON","ISLAND","JELLY","JEWEL","JOIN","JOURNEY","JUDGE","JUMP","KEEP","KETTLE","KEY","KICK","KIND","KISS","KNEE","KNIFE","KNOT","KNOWLEDGE","LAND","LANGUAGE","LAST","LATE","LAUGH","LAW","LEAD","LEAF","LEARNING","LEATHER","LEFT","LEG","LET","LETTER","LEVEL","LIBRARY","LIFT","LIGHT","LIKE","LIMIT","LINE","LINEN","LIP","LIQUID","LIST","LITTLE","LIVING","LOCK","LONG","LOOK","LOOSE","LOSS","LOUD","LOVE","LOW","MACHINE","MAKE","MALE","MAN","MANAGER","MAP","MARK","MARKET","MARRIED","MASS","MATCH","MATERIAL","MAY","MEAL","MEASURE","MEAT","MEDICAL","MEETING","MEMORY","METAL","MIDDLE","MILITARY","MILK","MIND","MINE","MINUTE","MIST","MIXED","MONEY","MONKEY","MONTH","MOON","MORNING","MOTHER","MOTION","MOUNTAIN","MOUTH","MOVE","MUCH","MUSCLE","MUSIC","NAIL","NAME","NARROW","NATION","NATURAL","NEAR","NECESSARY","NECK","NEED","NEEDLE","NERVE","NET","NEW","NEWS","NIGHT","NO","NOISE","NORMAL","NORTH","NOSE","NOT","NOTE","NOW","NUMBER","NUT","OBSERVATION","OF","OFF","OFFER","OFFICE","OIL","OLD","ON","ONLY","OPEN","OPERATION","OPINION","OPPOSITE","OR","ORANGE","ORDER","ORGANIZATION","ORNAMENT","OTHER","OUT","OVEN","OVER","OWNER","PAGE","PAIN","PAINT","PAPER","PARALLEL","PARCEL","PART","PAST","PASTE","PAYMENT","PEACE","PEN","PENCIL","PERSON","PHYSICAL","PICTURE","PIG","PIN","PIPE","PLACE","PLANE","PLANT","PLATE","PLAY","PLEASE","PLEASURE","PLOUGH","POCKET","POINT","POISON","POLISH","POLITICAL","POOR","PORTER","POSITION","POSSIBLE","POT","POTATO","POWDER","POWER","PRESENT","PRICE","PRINT","PRISON","PRIVATE","PROBABLE","PROCESS","PRODUCE","PROFIT","PROPERTY","PROSE","PROTEST","PUBLIC","PULL","PUMP","PUNISHMENT","PURPOSE","PUSH","PUT","QUALITY","QUESTION","QUICK","QUIET","QUITE","RAIL","RAIN","RANGE","RAT","RATE","RAY","REACTION","READING","READY","REASON","RECEIPT","RECORD","RED","REGRET","REGULAR","RELATION","RELIGION","REPRESENTATIVE","REQUEST","RESPECT","RESPONSIBLE","REST","REWARD","RHYTHM","RICE","RIGHT","RING","RIVER","ROAD","ROD","ROLL","ROOF","ROOM","ROOT","ROUGH","ROUND","RUB","RULE","RUN","SAD","SAFE","SAIL","SALT","SAME","SAND","SAY","SCALE","SCHOOL","SCIENCE","SCISSORS","SCREW","SEA","SEAT","SECOND","SECRET","SECRETARY","SEE","SEED","SEEM","SELECTION","SELF","SEND","SENSE","SEPARATE","SERIOUS","SERVANT","SEX","SHADE","SHAKE","SHAME","SHARP","SHEEP","SHELF","SHIP","SHIRT","SHOCK","SHOE","SHORT","SHUT","SIDE","SIGN","SILK","SILVER","SIMPLE","SISTER","SIZE","SKIN","SKIRT","SKY","SLEEP","SLIP","SLOPE","SLOW","SMALL","SMASH","SMELL","SMILE","SMOKE","SMOOTH","SNAKE","SNEEZE","SNOW","SO","SOAP","SOCIETY","SOCK","SOFT","SOLID","SOME","SON","SONG","SORT","SOUND","SOUP","SOUTH","SPACE","SPADE","SPECIAL","SPONGE","SPOON","SPRING","SQUARE","STAGE","STAMP","STAR","START","STATEMENT","STATION","STEAM","STEEL","STEM","STEP","STICK","STICKY","STIFF","STILL","STITCH","STOCKING","STOMACH","STONE","STOP","STORE","STORY","STRAIGHT","STRANGE","STREET","STRETCH","STRONG","STRUCTURE","SUBSTANCE","SUCH","SUDDEN","SUGAR","SUGGESTION","SUMMER","SUN","SUPPORT","SURPRISE","SWEET","SWIM","SYSTEM","TABLE","TAIL","TAKE","TALK","TALL","TASTE","TAX","TEACHING","TENDENCY","TEST","THAN","THAT","THE","THEN","THEORY","THERE","THICK","THIN","THING","THIS","THOUGHT","THREAD","THROAT","THROUGH","THROUGH","THUMB","THUNDER","TICKET","TIGHT","TILL","TIME","TIN","TIRED","TO","TOE","TOGETHER","TOMORROW","TONGUE","TOOTH","TOP","TOUCH","TOWN","TRADE","TRAIN","TRANSPORT","TRAY","TREE","TRICK","TROUBLE","TROUSERS","TRUE","TURN","TWIST","UMBRELLA","UNDER","UNIT","UP","USE","VALUE","VERSE","VERY","VESSEL","VIEW","VIOLENT","VOICE","WAITING","WALK","WALL","WAR","WARM","WASH","WASTE","WATCH","WATER","WAVE","WAX","WAY","WEATHER","WEEK","WEIGHT","WELL","WEST","WET","WHEEL","WHEN","WHERE","WHILE","WHIP","WHISTLE","WHITE","WHO","WHY","WIDE","WILL","WIND","WINDOW","WINE","WING","WINTER","WIRE","WISE","WITH","WOMAN","WOOD","WOOL","WORD","WORK","WORM","WOUND","WRITING","WRONG","YEAR","YELLOW","YES","YESTERDAY","YOU","YOUNG"]
+         var word = words[Math.floor(Math.random()*words.length)];
+         wordDigits = "";
+         console.log("ran cat" + word);
+         document.getElementById("workspace").innerHTML = word;
+         maxInputSize = word.length;
+         document.getElementById("textBox").disabled = false;
+         document.getElementById("workspace3").innerHTML = "0/" + goalRight;
+         window.onload=function(){
+          var form = document.getElementById("textBox");
+          form.focus();
+         }
+         //use this.responseText to populate table
+         cb2 = function(){
+           //extract map from JSON response
+           console.log(this.responseText);
+           row =  JSON.parse(this.responseText);
+           map = row[0].Map.split(',')
+           globalMap = map
+         
+           var table = document.getElementById("divTableBody");
+           letters = new Array()
+           
+           //generate letters array
+           for (i = 0; i < 26; i++){
+             letters[i] = String.fromCharCode('A'.charCodeAt() + i);
+           }
+         
+           colors = ["#65737e","#37474f"]
+         
+           //populate table
+           var tr = document.createElement('div'); //new row
+           tr.className = "divTableRow";
+           for (i = 0; i < map.length; i++) {
+                 var td = document.createElement('div'); //for letter
+                 td.className = "divTableCell";
+                 td.innerHTML = letters[i];
+                 tr.appendChild(td)
+                 td.style["background-color"] = colors[i%2]
+             } 
+             table.appendChild(tr);
+         
+           var tr = document.createElement('div'); //new row
+           tr.className = "divTableRow";
+           for (i = 0; i < map.length; i++) {
+                 var td = document.createElement('div'); //for letter
+                 td.className = "divTableCell";
+                 td.innerHTML = globalMap[i] 
+                 td.style["background-color"] = colors[i%2];
+                 tr.appendChild(td)
+             } 
+             table.appendChild(tr);
+         }//cb2
+         getMapFromDBSuccess(uEMail,uSessionToken,cb2);
+         
+         function limitInput(element){
+           if(element.disabled){
+             return
+           }
+           
+           if (element.value.length > word.length){
+             element.value = element.value.substr(0,word.length);
+           }
+         
+           if (!wordDigits){
+             for (var i=0; i<word.length; i++){
+               wordDigits += globalMap[ word.charCodeAt(i) - 65 ]
+             }
+             console.log(wordDigits)
+           }
+          var len=element.value.substr(0,word.length);
+           var newtext="";
+            var j=0
+            for (j;j<word.length;j++){
+
+              if (element.value.charAt(j)==wordDigits.charAt(j))
+              {
+              newtext=newtext+word.charAt(j).fontcolor("26ff00");
+        
+
+               }
+              else {
+              
+                    newtext=newtext+word.charAt(j).fontcolor("#045FB4");
+                    }
+
+                  
+    }
+    
+
+
+  
+  document.getElementById("workspace").innerHTML = newtext;
+
+
+
+
+
+
+           if (element.value == wordDigits){
+             console.log("success")
+             //set to green
+             numRight += 1;
+             document.getElementById("workspace3").innerHTML = numRight + "/" + goalRight; 
+             document.getElementById("workspace3").style.color = "#26ff00";
+             document.getElementById("workspace").style.color = "#26ff00";
+             document.getElementById("textBox").style.color = "#26ff00";
+             document.getElementById("textBox").disabled = true;
+ var percent=(numRight/goalRight)*100;
+    var elem = document.getElementById('myBar');
+    var box =  document.getElementById("textBox");
+    var width = 0;
+    var id = setInterval(frame,0);
+
+    function frame() {
+      if(width>=percent){
+        clearInterval(id);
+      }
+      else{
+        width++;
+        elem.style.width = width+"%";
+        document.getElementById('label').innerHTML=width*1 + "%"
+      }
+      
+    }
+
+
+
+
+
+         
+             function resetTextBox(){
+               document.getElementById("workspace3").style.color = "#045FB4";
+               document.getElementById("workspace").style.color = "#045FB4";
+               document.getElementById("textBox").style.color = "#045FB4";
+               document.getElementById("textBox").value = "";
+         
+               if (numRight >= goalRight){
+                 var time = (new Date().getTime() - startTime)/1000;
+                 document.getElementById("workspace").innerHTML = "Finished in " + time + "s";
+                 cbTraining = function() {};
+                 addTrainAttemptToDBSuccess(uEMail,globalMap.join(),"1",time,uSessionToken,cbTraining);
+               }else{
+                 
+                 document.getElementById("textBox").disabled = false;
+                 document.getElementById("textBox").focus();
+                 document.getElementById("textBox").select();
+                 word = words[Math.floor(Math.random()*words.length)];
+                 wordDigits = ""
+                 document.getElementById("workspace").innerHTML = word;
+               }
+               var form = document.getElementById("textBox");
+                form.focus();
+             }
+             window.setTimeout(resetTextBox,2000);
+           }
+         }   
+      </script>
+   </body>
+</html>

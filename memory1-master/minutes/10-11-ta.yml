@@ -1,0 +1,40 @@
+date: October 11, 2016
+meeting_type: ta
+attendance: [rktaylor, jacondel, alee22, bpriexin, kangmink]
+absent: [yonghyun]
+excused_absences: [
+  {ubit: yonghyun, excuse: Hasn't been feeling well; too sick to make it},
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Randomized correct test question answers.},
+  {ubit: alee22, progress: Created and submitted our Sprint2 video.},
+  {ubit: jacondel, progress: Added a navigation bar to the Home/Main page.},
+  {ubit: yonghyun, progress: },
+  {ubit: bpriexin, progress: Got our domain name changed; this required som emessing with the API.},
+  {ubit: kangmink, progress: Wrote a separate php file for communicating between DB and client side.}
+  ]
+issues: [
+  {ubit: rktaylor, issue: What #'s should the map generate? For research purposes, 0-9 or 1-26?}
+  ]
+Notes:  | 
+We want the map for a user to be saved, and they can generate a new map if they so wish for a new test.
+We want their map to be displayed on their login page.
+
+We have five pages that we need to link together properly, both for moving foward and backward.
+Login has to be integrated with DB, and login credentials maintained as the user progresses.
+The test page will have to implement the DB usage to get the map that was generated. Ajax requests will be involved.
+The test page still looks a little... bland.
+We could incorporate a survey for which traiing method was most effective.
+
+We may need a very basic Terms & Conditions & Privacy policy.
+
+The training page is completely undesigned. Ideally, it has a bunch of different methods of assisting the user.
+Audio, visuals, colors, shapes, accelerometer, etc. Ben also has a matching game idea.
+We do not want the task to be too tedious, however, do we?
+
+New Tasks--
+Jacob will integrate the home page with his DB, then next week show the client side what he did.
+Ryan will handle making the test pull data from the DB, and sending score info to it.
+Kang will make an accessor to the scoreboard database, and modify it.
+Andrew will work on CSS styling the test page.
+Ben is currently assigned designing the first training page. But he's rusty with front-end code.

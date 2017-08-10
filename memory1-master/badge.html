@@ -1,0 +1,272 @@
+<!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<!--<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>-->
+<body>
+
+<!--All styling is inline right now. It may need to be moved to a different file eventually.-->
+
+<!--Nice fonts should be selected for everything.-->
+
+<h1 title="Your Badges"; style="text-align:center;">
+Badges
+</h1>
+
+<hr>
+
+<style>
+#stuff {
+    border-radius: 20px;
+    font-size: 20px;
+    color:white;
+    background-color: 	#FF0000;
+    padding: 0px;
+    height:  60px;
+    text-align:left;
+    text-decoration: none;
+    padding:0;
+    border: outset;
+    padding: 15px 32px;
+    display: inline-block;
+    margin: 2px 2px;
+    width: 180px;
+    position: relative;
+}
+#badge1 {
+    border-radius: 20px;
+    font-size: 20px;
+    color:black;
+    background-color: 	#FFFFFF;
+    padding: 0px;
+    height:  76px;
+    text-align:left;
+    text-decoration: none;
+    padding:0;
+    border: outset;
+    padding: 15px 32px;
+    display: inline-block;
+    margin: 2px 2px;
+    width: 76px;
+    position: relative;
+}
+#badge2 {
+   border-radius: 20px;
+    font-size: 20px;
+    color:black;
+    background-color: 	#FFFFFF;
+    padding: 0px;
+    height:  76px;
+    text-align:left;
+    text-decoration: none;
+    padding:0;
+    border: outset;
+    padding: 15px 32px;
+    display: inline-block;
+    margin: 2px 2px;
+    width: 76px;
+    position: relative;
+}
+#badge3 {
+   border-radius: 20px;
+    font-size: 20px;
+    color:black;
+    background-color: 	#FFFFFF;
+    padding: 0px;
+    height:  76px;
+    text-align:left;
+    text-decoration: none;
+    padding:0;
+    border: outset;
+    padding: 15px 32px;
+    display: inline-block;
+    margin: 2px 2px;
+    width: 76px;
+    position: relative;
+}
+#badge4 {
+   border-radius: 20px;
+    font-size: 20px;
+    color:black;
+    background-color: 	#FFFFFF;
+    padding: 0px;
+    height:  76px;
+    text-align:left;
+    text-decoration: none;
+    padding:0;
+    border: outset;
+    padding: 15px 32px;
+    display: inline-block;
+    margin: 2px 2px;
+    width: 76px;
+    position: relative;
+}
+#badge5 {
+   border-radius: 20px;
+    font-size: 20px;
+    color:black;
+    background-color: 	#FFFFFF;
+    padding: 0px;
+    height:  76px;
+    text-align:left;
+    text-decoration: none;
+    padding:0;
+    border: outset;
+    padding: 15px 32px;
+    display: inline-block;
+    margin: 2px 2px;
+    width: 76px;
+    position: relative;
+}
+#badge6 {
+   border-radius: 20px;
+    font-size: 20px;
+    color:black;
+    background-color: 	#FFFFFF;
+    padding: 0px;
+    height:  76px;
+    text-align:left;
+    text-decoration: none;
+    padding:0;
+    border: outset;
+    padding: 15px 32px;
+    display: inline-block;
+    margin: 2px 2px;
+    width: 76px;
+    position: relative;
+}
+#badge7 {
+   border-radius: 20px;
+    font-size: 20px;
+    color:black;
+    background-color: 	#FFFFFF;
+    padding: 0px;
+    height:  76px;
+    text-align:left;
+    text-decoration: none;
+    padding:0;
+    border: outset;
+    padding: 15px 32px;
+    display: inline-block;
+    margin: 2px 2px;
+    width: 76px;
+    position: relative;
+}
+</style>
+
+<div style="text-align: center;">
+<input type="image" id="badge1" src="images/Train1alt.png" value="Badge1" onclick="badgeInfo1()" />
+
+<input type="image" id="badge2" src="images/Train2alt.png" value="Badge2" onclick="badgeInfo2()" />
+
+<input type="image" id="badge3" src="images/Train3alt.png" value="Badge3" onclick="badgeInfo3()" />
+
+<input type="image" id="badge4" src="images/AllWrong2.png" value="Badge4" onclick="badgeInfo4()" />
+	
+<input type="image" id="badge5" src="images/AllCorrect2.png" value="Badge5" onclick="badgeInfo5()" />
+
+<input type="image" id="badge6" src="images/Google2.png" value="Badge6" onclick="badgeInfo6()" />
+
+<input type="image" id="badge7" src="images/LeaderBoard2.png" value="Badge7" onclick="badgeInfo7()" />
+
+<p id="info"></p>
+</div>
+
+<script src="dbAccess.js"> </script>
+
+
+<script>
+    var count = 1;
+	var uEMail = window.sessionStorage.getItem("personEMail")//Email needed as funct param.
+	var uSessionToken = window.sessionStorage.getItem("sessionToken");
+	var badge = new Array();
+	window.sessionStorage.getItem("badge");
+	
+	function badgeInfo1(){
+		document.getElementById('info').innerHTML="Completed Train 1";
+	}
+	
+	function badgeInfo2(){
+		document.getElementById('info').innerHTML="Completed Train 2";
+	}
+	
+	function badgeInfo3(){
+		document.getElementById('info').innerHTML="Completed Train 3";
+	}
+	
+	function badgeInfo4(){
+		document.getElementById('info').innerHTML="Failed a test";
+	}
+	
+	function badgeInfo5(){
+		document.getElementById('info').innerHTML="All correct on test";
+	}
+	
+	function badgeInfo6(){
+		document.getElementById('info').innerHTML="Added a friend on google+";
+	}
+	
+	function badgeInfo7(){
+		document.getElementById('info').innerHTML="Number 1";
+	}
+	
+	function changeBadge1(){
+		var img = document.getElementById("badge1");
+		img.src="images/Train1.png";
+	}
+	function changeBadge2(){
+		var img = document.getElementById("badge2");
+		img.src="images/Train2.png";
+	}
+	function changeBadge3(){
+		var img = document.getElementById("badge3");
+		img.src="images/Train3.png";
+	}
+	function changeBadge4(){
+		var img = document.getElementById("badge4");
+		img.src="images/AllWrong.png";
+	}
+	function changeBadge5(){
+		var img = document.getElementById("badge5");
+		img.src="images/AllCorrect.png";
+	}
+	function changeBadge6(){
+		var img = document.getElementById("badge6");
+		img.src="images/Google.png";
+	}
+	function changeBadge7(){
+		var img = document.getElementById("badge7");
+		img.src="images/LeaderBoard.png";
+	}
+	
+
+  cb = function(){
+	row = JSON.parse(this.responseText);
+	console.log("in call back");
+	for(var i=0;i<row.length;i++){
+		if (row[i].BadgeName == "Train1") changeBadge1();
+		if (row[i].BadgeName == "Train2") changeBadge2();
+		if (row[i].BadgeName == "Train3") changeBadge3();
+		if (row[i].BadgeName == "AllWrong") changeBadge4();
+		if (row[i].BadgeName == "AllCorrect") changeBadge5();
+		if (row[i].BadgeName == "Google") changeBadge6();
+		if (row[i].BadgeName == "LeaderBoard") changeBadge7();
+		}
+  }
+
+  getBadgeFromDBSuccess(uEMail,uSessionToken,cb);
+  
+
+  
+
+</script>
+
+</body>
+</html>

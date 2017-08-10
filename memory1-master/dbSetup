@@ -1,0 +1,11 @@
+drop database Memory1;
+create database Memory1;
+use Memory1;
+
+create table Users (UserId varchar(255), UserName varchar(255), Alias varchar(255), PRIMARY KEY (UserId));
+create table Scores (UserId varchar(255), Score int, TimeStamp timestamp);
+create table Maps (UserId varchar(255), Map varchar(255), PRIMARY KEY (UserId));
+create table UserTraining (UserId varchar(255), Map varchar(255), TrainMod varchar(255), Time double, TimeStamp timestamp);
+create table UserBadges (UserId varchar(255), BadgeName varchar(255), TimeStamp timestamp);
+create table SessionTokens (UserId varchar(255), SessionToken varchar(255), PRIMARY KEY (UserId));
+

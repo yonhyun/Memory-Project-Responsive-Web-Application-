@@ -1,0 +1,441 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+   <head>
+      <title>Memory 1</title>
+      <link rel="stylesheet" 
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <style>
+        .navbar {
+          margin-bottom: 0;
+        }
+
+        .navbar-inverse {
+          background-color: #222222;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+          background-color: #045FB4;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+          background-color: #222222;
+        }
+
+        .dropdown-menu {
+          background-color: #222222;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          background-color: #045FB4;
+        }
+
+        .navbar-inverse {
+          background-image: none;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          background-image: none;
+        }
+
+        .navbar-inverse {
+          border-color: #080808;
+        }
+
+        .navbar-inverse .navbar-brand {
+          color: #999999;
+        }
+
+        .navbar-inverse .navbar-brand:hover {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>li>a {
+          color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu>li>a {
+          color: #FFFFFF;
+        }
+
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+          color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a .caret {
+          border-top-color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+          border-top-color: #FFFFFF;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a .caret {
+          border-bottom-color: #999999;
+        }
+
+        .navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+          border-bottom-color: #FFFFFF;
+        }
+
+        .jumbotron {
+          background-color: #045FB4;
+          color: #fff;
+          padding: 50px 25px;
+          font-family: Montserrat, sans-serif;
+        }
+
+        .col-centered {
+          display: inline-block;
+          float: none;
+                 /* reset the text-align */
+          text-align: left;
+                 /* inline-block space fix */
+          margin-right: -4px;
+        }
+
+        .col-centered {
+          float: none;
+          margin: 0 auto;
+        }
+
+        #workspace {
+          text-align: center;
+          font-size: 30px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+
+        #workspace2 {
+          text-align: center;
+          font-size: 30px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+
+        #workspace3 {
+          text-align: center;
+          font-size: 40px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+
+        #workspace4 {
+          text-align: center;
+          font-size: 20px;
+          font-family: Montserrat, sans-serif;
+          color: #045FB4;
+        }
+
+        #qcount, #ccount, #bar {
+          display: inline;
+        }
+
+        .divTable {
+          display: table;
+          width: 100%;
+          table-layout: fixed;
+          color: white;
+          height: 50px;
+          text-align: center;
+          border: none;
+          background: none;
+        }
+
+        .divTableRow {
+          display: table-row;
+        }
+
+        .divTableCell {
+          display: table-cell;
+          height: 50px;
+          font-size: 30px;
+          vertical-align: middle;
+        }
+
+        .divTableBody {
+          display: table-row-group;
+        }
+
+        @media screen and (max-width: 768px) {
+          .divTableCell {
+            height: 25px;
+            font-size: 10px;
+            border-spacing: 0px;
+          }
+
+          .divTable {
+            height: 25px;
+          }
+        }
+      </style>
+   </head>
+   <body>
+      <script>
+         var uName = window.sessionStorage.getItem("personName");
+         if(uName == "null" || uName === null){
+             window.location = "index.html";    
+         }
+      </script>
+      <nav class="navbar navbar-inverse navbar-static-top">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+               <ul class="nav navbar-nav">
+                  <li><a href="main.html">Home</a></li>
+                  <li class="dropdown">
+                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Train <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="train1.html">Training Method 1</a></li>
+                        <li><a href="train2.html">Training Method 2</a></li>
+                        <li><a href="train3.html">Training Method 3</a></li>
+                        <li class="active"><a href="mnemonic.html">Setup Mnemonic</a></li>
+                        <li><a href="trainHistory.html">Train History</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="test.html">Test</a></li>
+                  <li><a href="scoreboard.php">Scoreboard</a></li>
+                  <li><a href="account.html">Account</a></li>
+               </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li><a href="index.html" onclick="signOut();">Sign out</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <meta name="google-signin-client_id" content="833283724043-60mn1u2ekeacj2fmpupmtvpq6rd37eab.apps.googleusercontent.com">
+      <script>
+         function signOut() {
+           var auth2 = gapi.auth2.getAuthInstance();
+           auth2.signOut().then(function () {
+           console.log('User signed out.');
+           window.sessionStorage.setItem("personName", null);
+         window.sessionStorage.setItem("personEMail", null);
+               window.location = "index.html";
+           });
+         }
+           function onLoad() {
+             gapi.load('auth2', function() {
+               gapi.auth2.init();
+             });
+           }
+      </script>
+      <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+      <script src="dbAccess.js"> </script>
+      <div class="jumbotron text-center">
+         <h1> Mnemonic </h1>
+      </div>
+      <div id="tableHolder" class="container">
+      </div>
+
+      <div id="workspace">
+        <button onclick="saveChanges()"> Save Changes </button>
+      </div>
+    </br>
+    </br>
+    </br>
+
+      <script>
+      var uName = window.sessionStorage.getItem("personName");
+      var uEMail = window.sessionStorage.getItem("personEMail");
+      var uSessionToken = window.sessionStorage.getItem("sessionToken");
+      lastClickedElement = null
+      lastClickedRow = ""
+
+
+      function saveChanges(){
+        j = exportData()
+        console.log("leaving and adding");
+        setMnemonicSuccess(uEMail,JSON.stringify(j),uSessionToken,function(){});
+      }
+
+      generateTable = function(){
+          console.log("did not exist")
+          row =  JSON.parse(this.responseText);
+          map = row[0].Map.split(',')
+          letters = new Array()
+          for (i = 0; i < 26; i++){
+            letters[i] = String.fromCharCode('A'.charCodeAt() + i);
+          }
+
+
+          digitGroups = new Array(10)
+
+          for (i=0; i<10; i++){
+            digitGroups[i] = new Array()
+          }
+
+          for(i=0;i<26;i++){
+            digitGroups[map[i]].push(letters[i])
+          }
+          colors = ["#65737e","#37474f"]
+             
+         for(i = 0; i < 10 ; i++){
+            var divTable = document.createElement('div')
+            divTable.className = "divTable"
+            divTableBody = document.createElement('div')
+            divTableBody.className = "divTableBody"
+            divTable.appendChild(divTableBody)
+            document.getElementById("tableHolder").appendChild(divTable) //tableHolder contains divTableBody
+
+            var tr = document.createElement('div');  //make row
+            tr.className = "divTableRow";
+            var td = document.createElement('div');  //add digit to row
+            td.className = "divTableCell";
+            td.style["width"] = "20%"
+            td.innerHTML = i;
+            tr.appendChild(td)
+            td.style["background-color"] = colors[i%2]
+            td.style["border-right"] = "solid"
+            td.style["border-color"] = "white"
+            if(digitGroups[i].length == 0){
+              var dummy = document.createElement('div')
+              dummy.style["background-color"] = colors[i%2]
+              dummy.className = "divTableCell"
+              tr.appendChild(dummy) //create dummy element to keep digit left
+            }
+            for (j = 0; j < digitGroups[i].length; j++) {
+               var td = document.createElement('div'); 
+               td.className = "divTableCell";
+               td.setAttribute('onclick', "handle(this,"+i+")");
+               td.innerHTML = digitGroups[i][j];
+               tr.appendChild(td)                   //add letters to row
+               td.style["background-color"] = colors[i%2]
+            } 
+            divTableBody.appendChild(tr)            //add row to divTableBody
+
+            var textBox = document.createElement("input")
+            textBox.type = "text"
+            textBox.className = "myTextBox"
+            textBox.style["color"] = "#045FB4"
+            textBox.style["width"] = "100%"
+            textBox.style["height"] = "50px"
+            textBox.style["font-size"] = "40px"
+            document.getElementById("tableHolder").appendChild(textBox) //tableHolder contains divTableBody
+
+        }
+      }
+
+      generateTableExisting = function(j){
+          console.log("existed")
+          colors = ["#65737e","#37474f"]
+          console.log(j)
+
+         
+            rows = JSON.parse(j).rows
+            console.log(rows)
+
+            
+
+            for(row=0;row<rows.length;row++){
+              var divTable = document.createElement('div')
+              divTable.className = "divTable"
+              divTableBody = document.createElement('div')
+              divTableBody.className = "divTableBody"
+              divTable.appendChild(divTableBody)
+              document.getElementById("tableHolder").appendChild(divTable) //tableHolder contains divTableBody
+              var tr = document.createElement('div');  //make row
+              tr.className = "divTableRow";
+              var td = document.createElement('div');  //add digit to row
+              td.className = "divTableCell";
+              td.style["width"] = "20%"
+              td.innerHTML = rows[row].digit;
+              tr.appendChild(td)
+              td.style["background-color"] = colors[row%2]
+              td.style["border-right"] = "solid"
+              td.style["border-color"] = "white"
+              for (i = 0; i < rows[row].letters.length; i++) {
+                 var td = document.createElement('div'); 
+                 td.className = "divTableCell";
+                 td.setAttribute('onclick', "handle(this,"+row+")");
+                 td.innerHTML = rows[row].letters[i];
+                 tr.appendChild(td)                   //add letters to row
+                 td.style["background-color"] = colors[row%2]
+              } 
+              divTableBody.appendChild(tr)            //add row to divTableBody
+              var textBox = document.createElement("input")
+              textBox.type = "text"
+              textBox.className = "myTextBox"
+              textBox.style["color"] = "#045FB4"
+              textBox.style["width"] = "100%"
+              textBox.style["height"] = "50px"
+              textBox.style["font-size"] = "40px"
+              textBox.value = rows[row].textfield
+              document.getElementById("tableHolder").appendChild(textBox) //tableHolder contains divTableBody
+            }
+      }
+     
+
+
+      checkExists = function(){
+        row =  JSON.parse(this.responseText);
+           if(row && JSON.parse(row[0].Mnemonic).hasOwnProperty("rows") && JSON.parse(row[0].Mnemonic).rows.length !=0){
+             j = row[0].Mnemonic
+             console.log(j)
+             generateTableExisting(j)
+           }else{
+             getMapFromDBSuccess(uEMail,uSessionToken,generateTable);
+           }
+      }
+
+
+      getMnemonicSuccess(uEMail,uSessionToken,checkExists);
+
+      function handle(c,row){
+
+        if (lastClickedElement != null && row == lastClickedRow){
+          tmp = lastClickedElement.innerHTML
+          lastClickedElement.innerHTML = c.innerHTML
+          c.innerHTML = tmp
+          lastClickedElement = null
+          lastClickedRow = ""
+        }else{
+          lastClickedRow = row
+          lastClickedElement = c
+        }
+        console.log(exportData())
+      }
+
+      function exportData(){
+        letterRows = document.getElementById("tableHolder").getElementsByClassName("divTableRow")
+        textBoxes = document.getElementById("tableHolder").getElementsByClassName("myTextBox")
+        var JSONRows = {}
+        JSONRows["rows"] = new Array()
+        for (row=0;row<letterRows.length;row++){//visit each row of letters
+          var JSONRow = {}
+          cells = letterRows[row].getElementsByClassName("divTableCell")//visit each letter
+          JSONRow["digit"] = cells[0].innerHTML //first cell is the digit
+          JSONRow["letters"] = new Array()
+          for(cell=1;cell<cells.length;cell++){
+            JSONRow["letters"].push(cells[cell].innerHTML)
+          }
+          JSONRow["textfield"] = textBoxes[row].value
+          JSONRows["rows"].push(JSONRow)
+        }
+        return JSONRows
+      }
+      </script>
+
+
+   </body>
+</html>

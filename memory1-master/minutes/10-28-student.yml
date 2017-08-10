@@ -1,0 +1,34 @@
+date: October 28, 2016
+meeting_type: student
+attendance: [rktaylor, jacondel, bpriexin, kangmink, alee22]
+absent: [yonghyun]
+excused_absences: [
+  {ubit: yonghyun, excuse: Probably had to work / had class.}
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Tested my DB access code on my part of the server. Seems to work.},
+  {ubit: alee22, progress: Worked on a second training page.},
+  {ubit: jacondel, progress: Fixed the dbAccess.php file that Kang broke. Linked updated files to main website.},
+  {ubit: yonghyun, progress: Added a progress bar to Jacob's TrainingPage1. Linked Ryan's test page to the site.},
+  {ubit: bpriexin, progress: He's been like the general manager of our server and DB's, and is the first to notice when stuff breaks.},
+  {ubit: kangmink, progress: He's had his own DB for the scoreboard in development for a while.}
+  ]
+issues: [
+  {ubit: everyone, isuue: We rely on the user having a cookie/authentication token before they can access stuff. We don't know what to do if a cookie expires.}
+  {ubit: everyone, issue: What if someone hits the back button on their browser durng the test?}
+  {ubit: everyone, issue: Besides implementing a timer, how do we stop people from cheating during the test (writing down their map on paper)?}
+  ]
+Notes:  | 
+If it's not broken, don't try to fix it!
+If we're near the end of a sprint, don't touch sensitive files (unless they're broken).
+Don't delete any branches on GitHub! At least, not until we all have a final grade in this course.
+Who's gonna shoot the video this time?
+
+At our next TA meeting, I'd like for us to make an outline of just what all the DB's are holding, 
+  to avoid confusion down the road when more than one of us designs a training page.
+  
+We should be careful with that Nav bar at the top of the site, 'cuz we don't want people going back once they start a test.
+
+Previous minutes files have left people with blank task completion, but everyone has indeed been working on something over time.
+
+Ryan: Get rid of the Begin Test button. Move those function calls inside the callback!

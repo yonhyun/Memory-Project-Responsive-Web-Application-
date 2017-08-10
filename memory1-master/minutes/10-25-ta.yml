@@ -1,0 +1,32 @@
+date: October 25, 2016
+meeting_type: ta
+attendance: [rktaylor, jacondel, bpriexin, kangmink, yonghyun]
+absent: [alee22]
+excused_absences: [
+  {None}
+  ]
+task_progress: [
+  {ubit: rktaylor, progress: Added 'Start Test' button to test page, updated function calls for DB interaction (they should actually work now).},
+  {ubit: alee22, progress: },
+  {ubit: jacondel, progress: Updated functions for DB interaction, and updated LoggedIn page so it can generate and display the map.},
+  {ubit: yonghyun, progress: },
+  {ubit: bpriexin, progress: },
+  {ubit: kangmink, progress: }
+  ]
+issues: [
+  {ubit: alee22, issue: Seems to be absent for uncontrollable reasons.}
+  {ubit: rktaylor, issue: It seems activity has been low and communication has been poor amongst the group this sprint.}
+  {ubit: everyone, isuue: We rely on the user having a cookie/authentication token before they can access stuff. We don't know what to do if a cookie expires.}
+  ]
+Notes:  | 
+We need to link our pages together so we can make sure stuff works!
+Every group's project is on the course website.
+We'll make sure everything's working Friday at 3 in another meeting.
+
+We all need a virtual box so we can test our code, or some other means of testing without breaking stuff.
+/var/www/html is our directory on our server.
+
+Specific Tasks:
+Ryan: (Small note to self: Adapt test page code to generate only false values 0-9.)
+Ryan: The time remaining must be sent to Kang's php script for the leaderboards (Write a function similar to addScoreToDBSuccess).
+Julius: Add the link to Ryan's test page to the main website.
